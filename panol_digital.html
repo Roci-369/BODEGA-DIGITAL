@@ -543,6 +543,96 @@ document.getElementById('exportBtn').addEventListener('click', ()=>{
 (async function init(){
   await loadState();
   render();
+  // =============================
+2
+// PANEL DE ADMINISTRACION PAÑOL
+3
+// =============================
+4
+ 
+5
+function agregarHerramienta(){
+6
+ 
+7
+const descripcion = prompt("Nombre de la herramienta");
+8
+ 
+9
+if(!descripcion) return;
+10
+ 
+11
+const ubicacion = prompt("Ubicación (Ej: A1)");
+12
+const marca = prompt("Marca","");
+13
+const parte = prompt("N° Parte","");
+14
+const obs = prompt("Observaciones","");
+15
+ 
+16
+ITEMS.push({
+17
+id:'item_'+Date.now(),
+18
+ubicacion: ubicacion || '',
+19
+estante:(ubicacion||'').charAt(0),
+20
+descripcion,
+21
+parte,
+22
+marca,
+23
+obs
+24
+});
+25
+ 
+26
+render();
+27
+ 
+28
+alert('Herramienta agregada');
+29
+}
+window.addEventListener('load',()=>{
+2
+ 
+3
+const footer=document.querySelector('footer');
+4
+ 
+5
+if(!footer) return;
+6
+ 
+7
+const btn=document.createElement('button');
+8
+ 
+9
+btn.innerHTML='➕ Agregar herramienta';
+10
+ 
+11
+btn.className='export-btn';
+12
+ 
+13
+btn.onclick=agregarHerramienta;
+14
+ 
+15
+footer.appendChild(btn);
+16
+ 
+17
+});  
 })();
 
 </script>
