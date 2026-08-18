@@ -604,34 +604,47 @@ window.addEventListener('load',()=>{
 2
  
 3
-const footer=document.querySelector('footer');
+const btn=document.createElement('button');
 4
  
 5
-if(!footer) return;
+btn.innerHTML='➕ Agregar herramienta';
 6
  
 7
-const btn=document.createElement('button');
+btn.style.position='fixed';
 8
- 
+btn.style.bottom='20px';
 9
-btn.innerHTML='➕ Agregar herramienta';
+btn.style.right='20px';
 10
- 
+btn.style.zIndex='9999';
 11
-btn.className='export-btn';
+btn.style.background='#f5b700';
 12
- 
+btn.style.color='#000';
 13
-btn.onclick=agregarHerramienta;
+btn.style.border='none';
 14
- 
+btn.style.padding='12px 16px';
 15
-footer.appendChild(btn);
+btn.style.borderRadius='8px';
 16
- 
+btn.style.cursor='pointer';
 17
+btn.style.fontWeight='bold';
+18
+ 
+19
+btn.onclick=agregarHerramienta;
+20
+ 
+21
+document.body.appendChild(btn);
+22
+ 
+23
+});
 });  
 })();
 
